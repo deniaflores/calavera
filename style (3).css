@@ -2,60 +2,57 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Poppins, sans-serif;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f0f0f0;
 }
 
 .container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(90deg, #f7f5f5, #050112, #141414);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .parent {
-  width: 80%;
-  height: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 90%;
   background-color: #f7f1f1;
   box-shadow: 5px 5px 20px black;
-  color: #e6e6e6;
   overflow: hidden;
+  margin: 20px 0;
 }
 
-/* --- NAV --- */
-.parent nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 50px;
-  height: auto;
+/* ==== MENÚ ==== */
+nav {
+  width: 100%;
   background-color: #014728;
+  padding: 15px 0;
 }
 
 nav ul {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-nav ul li {
   list-style: none;
 }
 
+nav ul li {
+  margin: 10px 15px;
+}
+
 nav ul li a {
-  text-decoration: none;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 14px;
   color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
   background-color: #026040;
   border-radius: 5px;
-  transition: 0.3s ease;
-  display: inline-block;
+  display: block;
+  transition: background 0.3s;
 }
 
 nav ul li a:hover {
@@ -75,31 +72,28 @@ ul li #sub:hover {
   color: yellow;
 }
 
-/* --- CONTENIDO --- */
-.parent .main_content {
+/* ==== CONTENIDO ==== */
+.main_content {
   display: flex;
-  height: 85%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  color: black;
 }
 
-.main_content .left {
-  width: 50%;
-  height: 100%;
-  padding: 40px 80px;
+.left {
+  flex: 1 1 300px;
+  padding: 20px;
 }
 
 .left h3 {
-  font-weight: 600;
-  font-size: 25px;
-  text-transform: uppercase;
-  margin-top: 40px;
+  font-size: 24px;
 }
 
 .left h1 {
-  font-size: 55px;
-  font-weight: 900;
-  margin-bottom: 20px;
-  line-height: 60px;
-  text-transform: uppercase;
+  font-size: 40px;
+  margin: 10px 0;
 }
 
 .left h1 span {
@@ -107,113 +101,51 @@ ul li #sub:hover {
 }
 
 .left p {
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
-.main_content .right {
-  width: 60%;
-  height: 100%;
-  padding-left: 100px;
-  overflow: hidden;
+.right {
+  flex: 1 1 300px;
+  padding: 20px;
+  text-align: center;
 }
 
 .right video {
-  width: 300px;
-  height: 600px;
-  transform: translateY(-30px);
-  filter: saturate(120%);
+  width: 100%;
+  max-width: 300px;
   border-radius: 10px;
 }
 
+/* ==== DECORACIÓN ==== */
 .gradient {
-  width: 350px;
-  height: 350px;
-  position: absolute;
-  top: 48%;
-  left: 56%;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
   background-color: black;
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  border-radius: 50%;
   z-index: -1;
-  filter: blur(50px);
+  filter: blur(60px);
   box-shadow:
-    0 0 250px black,
-    0 0 200px black,
-    0 0 150px black;
+    0 0 150px black,
+    0 0 100px black;
 }
 
-/* --- RESPONSIVE --- */
-
-@media (max-width: 800px) {
-  .parent {
-    flex-direction: column;
-    width: 98%;
-    height: auto;
-    min-height: 100vh;
-    border-radius: 0;
-    padding-bottom: 20px;
-  }
-
-  .parent nav {
-    flex-direction: column;
-    padding: 20px 10px;
-  }
-
+/* ==== RESPONSIVE ==== */
+@media (max-width: 600px) {
   nav ul {
     flex-direction: column;
-    width: 100%;
+    gap: 10px;
   }
 
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  nav ul li a {
-    width: 90%;
-    font-size: 16px;
-    padding: 12px 20px;
-    text-align: center;
-  }
-
-  .main_content {
-    flex-direction: column;
-    height: auto;
-    text-align: center;
-  }
-
-  .main_content .left,
-  .main_content .right {
-    width: 100%;
-    padding: 20px 10px;
+  .left h1 {
+    font-size: 28px;
   }
 
   .right video {
-    width: 90vw;
-    max-width: 350px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    transform: none;
-  }
-
-  .gradient {
-    width: 200px;
-    height: 200px;
-    top: 70%;
-    left: 50%;
-    filter: blur(30px);
-  }
-}
-
-@media (max-width: 500px) {
-  .left h1 {
-    font-size: 2rem;
-    line-height: 2.3rem;
-  }
-
-  .left h3 {
-    font-size: 1.1rem;
-    margin-top: 10px;
+    max-width: 90vw;
   }
 
   .gradient {
@@ -221,6 +153,6 @@ ul li #sub:hover {
     height: 120px;
     top: 80%;
     left: 50%;
-    filter: blur(18px);
+    filter: blur(30px);
   }
 }
