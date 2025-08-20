@@ -1,103 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WEB DEVELOPMENT</title>
-    <link rel="stylesheet" href="style (3).css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <style>
-      /* Estilos básicos para el menú responsive */
-      nav {
-        position: relative;
-        background-color: #333;
-        padding: 10px 20px;
-        z-index: 100;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EDEN Health</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="parent">
+      <div class="gradient"></div>
 
-      nav ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        margin: 0;
-        padding: 0;
-      }
+      <!-- MENÚ -->
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Información</a></li>
+          <li><a href="form.html" class="btn-card"><i class="fas fa-calendar-plus"></i> Agendar Cita</a></li>
+          <li><a href="inicio.html" id="sub">INGRESAR</a></li>
+        </ul>
+      </nav>
 
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .menu-toggle {
-        display: none;
-        font-size: 28px;
-        background: none;
-        border: none;
-        color: white;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        cursor: pointer;
-      }
-
-      @media (max-width: 768px) {
-        nav ul {
-          flex-direction: column;
-          background-color: #333;
-          position: absolute;
-          top: 60px;
-          right: 0;
-          width: 200px;
-          display: none;
-        }
-
-        nav ul.active {
-          display: flex;
-        }
-
-        .menu-toggle {
-          display: block;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="parent">
-        <div class="gradient"></div>
-
-        <nav>
-          <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-          <ul id="menu">
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Información</a></li>
-            <li><a href="form.html" class="btn-card"><i class="fas fa-calendar-plus"></i> Agendar Cita</a></li>
-            <li><a href="inicio.html" id="sub">INGRESAR</a></li>
-          </ul>
-        </nav>
-
-        <div class="main_content">
-          <div class="left">
-            <h3>Web</h3>
-            <h1>EDEN <br><span>Health</span></h1>
-            <p>EDEN Health un sitio en el que podrás navegar a través de los hospitales de Tegucigalpa y 
-              Comayagüela, ya sean públicos o privados, cada uno con sus propias características y esencia
-              propia. Ingresa y descubre lo que EDEN Health te ofrece.</p>
-          </div>
-          <div class="right">
-            <video src="fisone.mp4" autoplay muted loop></video>
-          </div>
+      <!-- CONTENIDO PRINCIPAL -->
+      <div class="main_content">
+        <div class="left">
+          <h3>Web</h3>
+          <h1>EDEN <br><span>Health</span></h1>
+          <p>EDEN Health es un sitio donde podrás navegar a través de los hospitales de Tegucigalpa y Comayagüela, ya sean públicos o privados. Cada uno con su propia esencia. Ingresa y descubre lo que EDEN Health te ofrece.</p>
         </div>
-
+        <div class="right">
+          <video src="fisone.mp4" autoplay muted loop></video>
+        </div>
       </div>
-    </div>
 
-    <!-- JavaScript para mostrar/ocultar el menú en móviles -->
-    <script>
-      document.getElementById('menu-toggle').addEventListener('click', function () {
-        document.getElementById('menu').classList.toggle('active');
-      });
-    </script>
-  </body>
+    </div>
+  </div>
+</body>
 </html>
